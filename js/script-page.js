@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
       pin: true,
       scrub: true,
       start: "top 10%",
-      end: "bottom 50%",
+      end: "bottom 70%",
     //   markers: true,
       snap: {
           snapTo: 0.7,
@@ -97,4 +97,116 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
   });
+
+//   const cardContainer = document.querySelector(".card-container");
+//   const card = document.querySelector(".card-body");
+//   const cardItems = document.querySelectorAll(".card-item");
+
+//   // Початкові значення для анімації
+//   const maxRotation = 25; // Максимальний кут нахилу (градуси)
+//   const perspective = 1000; // Перспектива (аналогічно CSS perspective)
+
+//   cardContainer.addEventListener("mousemove", (e) => {
+//     // Отримуємо розміри контейнера
+//     const rect = cardContainer.getBoundingClientRect();
+//     const centerX = rect.width / 2;
+//     const centerY = rect.height / 2;
+
+//     // Обчислюємо позицію курсору відносно центру картки
+//     const mouseX = e.clientX - rect.left - centerX;
+//     const mouseY = e.clientY - rect.top - centerY;
+
+//     // Обчислюємо кути обертання
+//     const rotateX = -(mouseY / centerY) * maxRotation; // Нахил по осі X
+//     const rotateY = (mouseX / centerX) * maxRotation; // Нахил по осі Y
+
+//     // Анімуємо картку
+//     gsap.to(card, {
+//       duration: 0.3,
+//       rotateX: rotateX,
+//       rotateY: rotateY,
+//       ease: "power2.out",
+//       transformPerspective: perspective,
+//     });
+
+//     // Анімуємо дочірні елементи з ефектом "підйому"
+//     cardItems.forEach((item) => {
+//       const translateZ = item.dataset.translateZ || 0;
+//       gsap.to(item, {
+//         duration: 0.3,
+//         translateZ: translateZ,
+//         ease: "power2.out",
+//       });
+//     });
+//   });
+
+//   // Повернення картки до початкового стану при виході курсору
+//   cardContainer.addEventListener("mouseleave", () => {
+//     gsap.to(card, {
+//       duration: 0.5,
+//       rotateX: 0,
+//       rotateY: 0,
+//       ease: "power2.out",
+//     });
+
+//     cardItems.forEach((item) => {
+//       gsap.to(item, {
+//         duration: 0.5,
+//         translateZ: 0,
+//         ease: "power2.out",
+//       });
+//     });
+//   });
+
+// Select all card containers
+    const containers = document.querySelectorAll('.card-container');
+
+    containers.forEach(container => {
+      const body = container.querySelector('.card-body');
+      const items = container.querySelectorAll('.card-item');
+
+      // Reset transforms
+      gsap.set(items, { x: 0, y: 0, z: 0 });
+      gsap.set(body, { rotationX: 0, rotationY: 0 });
+
+      // Mouse enter: Elevate items
+      container.addEventListener('mouseenter', () => {
+        gsap.to(items, {
+          z: (index, target) => parseFloat(target.dataset.translateZ) || 0,
+          duration: 0.5,
+          ease: 'power2.out',
+          stagger: 0.1
+        });
+      });
+
+      // Mouse move: Tilt card
+      container.addEventListener('mousemove', (e) => {
+        const rect = container.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const tiltX = (e.clientY - centerY) / (rect.height / 2);
+        const tiltY = (e.clientX - centerX) / (rect.width / 2);
+        gsap.to(body, {
+          rotationX: tiltX * -15,
+          rotationY: tiltY * 15,
+          duration: 0.1,
+          ease: 'none'
+        });
+      });
+
+      // Mouse leave: Reset
+      container.addEventListener('mouseleave', () => {
+        gsap.to(body, {
+          rotationX: 0,
+          rotationY: 0,
+          duration: 0.5,
+          ease: 'power2.out'
+        });
+        gsap.to(items, {
+          z: 0,
+          duration: 0.5,
+          ease: 'power2.out'
+        });
+      });
+    });
 });
