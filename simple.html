@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-simple.css" />
+    <title>GSAP Start</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="bar"></div>
+      <header>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="page.html">Practice 2</a>
+        </nav>
+      </header>
+      <main>
+        <div class="container">
+          <div class="box box-1"></div>
+          <div class="box box-2"></div>
+          <div class="box box-3"></div>
+          <div class="box box-4"></div>
+        </div>
+        <button class="animate-btn">Run</button>
+        <div class="container box-small-container">
+          <div class="box-small" data-index="0"></div>
+          <div class="box-small" data-index="1"></div>
+          <div class="box-small" data-index="2"></div>
+          <div class="box-small" data-index="3"></div>
+          <div class="box-small" data-index="4"></div>
+          <div class="box-small" data-index="5"></div>
+          <div class="box-small" data-index="6"></div>
+          <div class="box-small" data-index="7"></div>
+          <div class="box-small" data-index="8"></div>
+          <div class="box-small" data-index="9"></div>
+          <div class="box-small" data-index="10"></div>
+          <div class="box-small" data-index="11"></div>
+          <div class="box-small" data-index="12"></div>
+          <div class="box-small" data-index="13"></div>
+          <div class="box-small" data-index="14"></div>
+          <div class="box-small" data-index="15"></div>
+          <div class="box-small" data-index="16"></div>
+          <div class="box-small" data-index="17"></div>
+          <div class="box-small" data-index="18"></div>
+          <div class="box-small" data-index="19"></div>
+        </div>
+        <div class="container box-grid-container"></div>
+        <div class="container box-container">
+          <div class="box-big blue"></div>
+          <div class="box-big red"></div>
+          <div class="box-big green"></div>
+          <div class="box-big blue"></div>
+          <div class="box-big red"></div>
+          <div class="box-big green"></div>
+          <div class="box-big blue"></div>
+          <div class="box-big red"></div>
+          <div class="box-big green"></div>
+          <div class="box-big blue"></div>
+          <div class="box-big red"></div>
+          <div class="box-big green"></div>
+        </div>
+        <div class="container progress-container">
+          <input class="slider" type="range" min="0" max="100" value="0" />
+          <div class="progress"></div>
+          <div class="label">0%</div>
+        </div>
+        <div class="container">
+          <!-- start button -->
+          <button class="play-btn" type="button">Play</button>
+          <!-- pause button -->
+          <button class="pause-btn" type="button">Pause</button>
+          <!-- end button -->
+          <button class="resume-btn" type="button">Resume</button>
+          <!-- reverse button -->
+          <button class="reverse-btn" type="button">Reverse</button>
+          <!-- restart button -->
+          <button class="restart-btn" type="button">Restart</button>
+          <!-- revert button -->
+          <button class="revert-btn" type="button">Revert</button>
+          <!-- kill button -->
+          <button class="kill-btn" type="button">Kill</button>
+        </div>
+        <div class="container circle-green-container"></div>
+        <div class="container circle-container"></div>
+        <div class="container circle-blue-container"></div>
+        <div class="container circle-purple-container">
+          <div class="circle-purple"></div>
+        </div>
+        <div class="container">
+          <!-- start button -->
+          <button class="play-button" type="button">Play</button>
+          <!-- pause button -->
+          <button class="pause-button" type="button">Pause</button>
+          <!-- restart button -->
+          <button class="restart-button" type="button">Restart</button>
+          <!-- resume button -->
+          <button class="resume-button" type="button">Resume</button>
+          <!-- reverse button -->
+          <button class="reverse-button" type="button">Reverse</button>
+          <!-- seek button -->
+          <span
+            ><button class="seek-button-minus" type="button">-</button>
+            <button class="seek-button" type="button">
+              Seek <span class="seek-value">0</span>
+            </button>
+            <button class="seek-button-plus" type="button">+</button></span
+          >
+          <!-- scale -->
+          <span
+            ><button class="scale-button-minus" type="button">-</button>
+            <button class="scale-button" type="button">
+              Scale <span class="scale-value">1</span>
+            </button>
+            <button class="scale-button-plus" type="button">+</button></span
+          >
+          <!-- kill button -->
+          <button class="kill-button" type="button">Kill</button>
+          <!-- revert button -->
+          <button class="revert-button" type="button">Revert</button>
+          <!-- middle -->
+          <button class="middle-button" type="button">Middle</button>
+          <!-- repeat -->
+          <button class="repeat-button" type="button">
+            Repeat count <span class="repeat-value">0</span>
+          </button>
+        </div>
+        <div class="container">
+          <button class="shuffle" type="button">Click</button>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+    <script src="js/script-simple.js"></script>
+  </body>
+</html>
