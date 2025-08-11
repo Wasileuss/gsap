@@ -76,28 +76,25 @@ document.addEventListener("DOMContentLoaded", function () {
   // Scroll Trigger
   gsap.registerPlugin(ScrollTrigger);
 
-  const cards = document.querySelectorAll(".card");
+  const cards = document.querySelectorAll(".card-text");
   
   gsap.set(cards, {position: 'absolute'})
   
-  gsap.to(".card", {
+  gsap.to(".card-text", {
     yPercent: -100,
     stagger: 0.5,
     scrollTrigger: {
-      trigger: ".cards",
+      trigger: ".cards-text",
       pin: true,
       scrub: true,
-      start: "top top",
-      end: "bottom 20%",
+      start: "top 10%",
+      end: "bottom 50%",
     //   markers: true,
       snap: {
-          snapTo: 0.33,
+          snapTo: 0.7,
           duration: {min: 0.1, max: 0.4},
           ease: "power1.inOut"
         }
     }
   });
-  
-  
-
 });

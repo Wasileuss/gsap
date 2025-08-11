@@ -126,7 +126,7 @@ img {
   padding: 40px 40px 0;
 }
 
-.cards {
+.cards-text {
   position: relative;
   display: flex;
   justify-content: center;
@@ -137,7 +137,7 @@ img {
   margin: 0;
   font-family: "Lato", sans-serif;
 }
-.card {
+.card-text {
   background-color: #00050a;
   border: 1px solid #eeeeee;
   --spacing: 50px;
@@ -154,7 +154,7 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  .card {
+  .card-text {
     width: 100%;
   }
     
@@ -174,4 +174,8 @@ img {
 }
 .scroll-trigger-text {
   line-height: 1.5;
+}
+.container:not(.cards-text) {
+  margin-top: 0;
+  padding-top: 20px; /* Adjust as needed */
 }
