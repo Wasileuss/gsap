@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Text Animation
 
-    const words = ["Vasyl.", "A Developer."]
+    const words = ["Vasyl.", "A Developer.", "Wodpress Developer."]
 
     let cursor = gsap.to('.cursor', {opacity:0, ease: "power2.inOut", repeat:-1})
     let masterTl = gsap.timeline({repeat: -1}).pause()
